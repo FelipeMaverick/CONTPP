@@ -8,7 +8,8 @@ CORS(app)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-os.makedirs(TEMPLATES_DIR, exist_ok=True)
+if not os.path.isdir(TEMPLATES_DIR):
+    os.makedirs(TEMPLATES_DIR, exist_ok=True)
 
 FIELD_ORDER = {
     'contrato_talent': [
