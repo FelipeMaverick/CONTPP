@@ -7,9 +7,7 @@ app = Flask(__name__, static_folder='.')
 CORS(app)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-if not os.path.isdir(TEMPLATES_DIR):
-    os.makedirs(TEMPLATES_DIR, exist_ok=True)
+TEMPLATES_DIR = BASE_DIR  # usa a raiz, onde está o contrato_talent.docx
 
 FIELD_ORDER = {
     'contrato_talent': [
